@@ -1,0 +1,14 @@
+.searchData{
+    text-align: right;
+}
+.printData{
+    text-align: right;
+    margin-bottom: 25px;
+}
+.printData a{
+    margin-right: 5px;
+}
+
+#userListing span{
+    cursor: pointer;
+}
