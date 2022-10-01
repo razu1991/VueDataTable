@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('user/list',[SiteController::class,'userList']);
+Route::get('/',[SiteController::class,'userList']);
 
 Route::get('users',[SiteController::class,'userJsonData']);
 
