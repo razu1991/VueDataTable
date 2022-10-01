@@ -26,7 +26,7 @@ class SiteController extends Controller
      */
     public function userJsonData()
     {
-        $users = User::paginate(10);
+        $users = User::get();
         return response(['users' => $users]);
     }
 

@@ -96,7 +96,7 @@
                     this.loading = true;
                     axios.get('/users').then(({data}) => {
                         this.loading = false;
-                        this.all_users = data.users.data;
+                        this.all_users = data.users;
                     }).catch();
                 },
                 sortId(type) {
