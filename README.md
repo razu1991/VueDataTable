@@ -1,5 +1,6 @@
 # Installation:
 
+- Run Command : Composer Update
 - Download project and update .env file add database username & database password
 - Start your server (Apache or others) & Mysql
 - Run Command : php artisan migrate
