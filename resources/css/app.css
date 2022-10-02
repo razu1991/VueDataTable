@@ -1,0 +1,12 @@
+.printData{
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.printData a{
+    margin-right: 5px;
+}
+
+.sortColumn span{
+    cursor: pointer;
+}

@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[SiteController::class,'userList']);
+Route::get('/',[SiteController::class,'index']);
+
+Route::get('user/list',[SiteController::class,'userList']);
 
 Route::get('users',[SiteController::class,'userJsonData']);
 

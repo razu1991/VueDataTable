@@ -12,6 +12,20 @@ class UsersExport implements FromCollection, WithMapping, WithHeadings
 {
     use Exportable;
 
+    protected $name;
+    protected $email;
+    protected $phone;
+
+    /**
+     * UserExport constructor
+     */
+    public function __construct($name, $email, $phone)
+    {
+        $this->name  = $name;
+        $this->email = $email;
+        $this->phone = $phone;
+    }
+
     /**
      * @param mixed $user
      *
@@ -43,6 +57,21 @@ class UsersExport implements FromCollection, WithMapping, WithHeadings
      */
     public function collection()
     {
-        return User::all();
+        $users = User::orderBy('id', 'desc');
+
+        if ($this->name != '') {
+            $users = $users->where('name', 'like', '%' . $this->name . '%');
+        }
+
+        if ($this->email != '') {
+            $users = $users->where('email', 'like', '%' . $this->email . '%');
+        }
+
+        if ($this->phone != '') {
+            $users = $users->where('phone', 'like', '%' . $this->phone . '%');
+        }
+
+        return $users->get();
+
     }
 }
